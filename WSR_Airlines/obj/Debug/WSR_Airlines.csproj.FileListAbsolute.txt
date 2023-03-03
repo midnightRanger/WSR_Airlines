@@ -1,0 +1,17 @@
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\WSR_Airlines.csproj.AssemblyReference.cache
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\AuthWindow.g.cs
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\App.g.cs
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\WSR_Airlines_MarkupCompile.cache
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\WSR_Airlines_MarkupCompile.lref
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\bin\Debug\WSR_Airlines.exe.config
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\bin\Debug\WSR_Airlines.exe
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\bin\Debug\WSR_Airlines.pdb
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\AuthWindow.baml
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\WSR_Airlines.g.resources
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\WSR_Airlines.Properties.Resources.resources
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\WSR_Airlines.csproj.GenerateResource.cache
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\WSR_Airlines.csproj.CoreCompileInputs.cache
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\WSR_Airlines.exe
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\WSR_Airlines.pdb
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\AdminMenuWindow.g.cs
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\AdminMenuWindow.baml
