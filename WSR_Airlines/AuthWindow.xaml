@@ -25,13 +25,16 @@
 
         <Image Source="source\DS2017_TP09_color@4x.png" Grid.Column="1"  Grid.Row="1"/>
         <Label Content="Username:" FontSize="30"  Grid.Column="0" HorizontalContentAlignment="Right" Padding="0,0,20,0"  VerticalContentAlignment="Center"  Grid.Row="3"  />
-        <TextBox x:Name="usernameTB"  FontFamily="Times New Roman" FontSize="24" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Grid.Row="3" Grid.Column="1"   />
+        <TextBox x:Name="usernameTB" Height="60"  FontFamily="Times New Roman" FontSize="24" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Grid.Row="3" Grid.Column="1"   />
 
         <Label Content="Password:" FontSize="30"  Grid.Column="0" HorizontalContentAlignment="Right" Padding="0,0,20,0"  VerticalContentAlignment="Center"  Grid.Row="5"  />
-        <TextBox x:Name="passwordTB"  FontFamily="Times New Roman" FontSize="30" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Grid.Row="5" Grid.Column="1"  />
+        <TextBox x:Name="passwordTB" Height="60"  FontFamily="Times New Roman" FontSize="30" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Grid.Row="5" Grid.Column="1"  />
+
+        <TextBlock x:Name="timerTB" Text=""  FontSize="28"  Grid.Row="6" Grid.Column="1"  HorizontalAlignment="Left"  Width="300" Height="70"  />
 
         <Button x:Name="loginBTN" Content="Login"  FontSize="28"  Grid.Row="6" Grid.Column="1" BorderThickness="5" HorizontalAlignment="Left"  Width="300" Height="70"  Click="enterBTN_Click" />
         <Button x:Name="exitBTN" Content="Exit"  FontSize="28"  Grid.Row="6" Grid.Column="1" BorderThickness="5" HorizontalAlignment="Right"  Click="enterBTN_Click"  Width="300" Height="70" />
-
+        
+        
     </Grid>
 </Window>
