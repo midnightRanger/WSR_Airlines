@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,15 @@ namespace WSR_Airlines
             InitializeComponent();
             usersTableAdapter.Fill(mainSet.Users);
 
+            var today = DateTime.Today;
+
+            for (int i = 0; i < mainSet.Users.DefaultView.Table.Rows.Count; i++)
+
+            {
+                string birthdate = mainSet.Users.Rows[i]["Birthdate"].ToString(); 
+                mainSet.Users.Rows[i]["Birthdate"] = today.Year - Convert.ToDateTime(birthdate, CultureInfo.InvariantCulture).Year; 
+            }
+            
             UserDataGrid.ItemsSource = mainSet.Users.DefaultView;
             UserDataGrid.SelectedValuePath = "Id";
             UserDataGrid.CanUserAddRows = false;
@@ -52,13 +62,7 @@ namespace WSR_Airlines
             //Data.Columns[3].Header = "Эмблема";
             //Data.Columns[4].Header = "Описание";
 
-            for (int i = 0; i < mainSet.Users.Rows.Count; i++)
-            {
-                if(mainSet.Users.Rows[i]["Active"] == "0")
-                {
-                   
-                }
-            }
+            
 
         }
 
