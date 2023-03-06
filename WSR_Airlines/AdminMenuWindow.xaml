@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WSR_Airlines"
         mc:Ignorable="d"
-        Title="AdminMenuWindow" Height="450" Width="800">
+        Title="AdminMenuWindow" Height="720" Width="1280" Loaded="Window_Loaded">
     <Grid>
+      
         
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="439*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="28*"/>
+
+        </Grid.RowDefinitions>
+        <Menu Height="25" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" Grid.ColumnSpan="3" Margin="0,0,-0.4,0">
+            <MenuItem Header="Add User" Height="25" Width="59" Click="MenuItemAddUser_Click"/>
+            <MenuItem Header="Exit" Height="25" Width="59" Click="MenuItemExit_Click"/>
+            
+        </Menu>
+
+        <DataGrid x:Name="UserDataGrid" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Active}" Value="1">
+                            <Setter Property="Background" Value="White" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Active}" Value="0">
+                            <Setter Property="Background" Value="Red" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+
+           
+
+        </DataGrid>
+
     </Grid>
 </Window>
