@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -22,26 +23,40 @@ namespace WSR_Airlines
     public partial class AdminMenuWindow : Window
     {
         MainSet mainSet = new MainSet();
-        UsersTableAdapter usersTableAdapter = new UsersTableAdapter(); 
+        UsersTableAdapter usersTableAdapter = new UsersTableAdapter();
+        OfficesTableAdapter officesTableAdapter = new OfficesTableAdapter();
+
+        UsersOfficeTableAdapter usersOfficeTableAdapter = new UsersOfficeTableAdapter();
         public AdminMenuWindow()
         {
             InitializeComponent();
             usersTableAdapter.Fill(mainSet.Users);
+            officesTableAdapter.Fill(mainSet.Offices);
+
+            usersOfficeTableAdapter.Fill(mainSet.UsersOffice);
 
             var today = DateTime.Today;
 
-            for (int i = 0; i < mainSet.Users.DefaultView.Table.Rows.Count; i++)
+            for (int i = 0; i < mainSet.UsersOffice.DefaultView.Table.Rows.Count; i++)
 
             {
-                string birthdate = mainSet.Users.Rows[i]["Birthdate"].ToString(); 
-                mainSet.Users.Rows[i]["Birthdate"] = today.Year - Convert.ToDateTime(birthdate, CultureInfo.InvariantCulture).Year; 
+                string birthdate = mainSet.UsersOffice.Rows[i]["Birthdate"].ToString();
+                mainSet.UsersOffice.Rows[i]["Birthdate"] = today.Year - Convert.ToDateTime(birthdate, CultureInfo.InvariantCulture).Year;
             }
-            
-            UserDataGrid.ItemsSource = mainSet.Users.DefaultView;
+
+            UserDataGrid.ItemsSource = mainSet.UsersOffice.DefaultView;
             UserDataGrid.SelectedValuePath = "Id";
             UserDataGrid.CanUserAddRows = false;
             UserDataGrid.CanUserDeleteRows = false;
             UserDataGrid.SelectionMode = DataGridSelectionMode.Single;
+
+            mainSet.Offices.Rows.Add("0", "0", "All", "0", "0");
+
+            officeCB.ItemsSource = mainSet.Offices.DefaultView;
+            officeCB.DisplayMemberPath = "Title";
+            officeCB.SelectedValuePath = "ID";
+
+            officeCB.SelectedIndex = mainSet.Offices.Rows.Count - 1;
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -62,7 +77,7 @@ namespace WSR_Airlines
             //Data.Columns[3].Header = "Эмблема";
             //Data.Columns[4].Header = "Описание";
 
-            
+
 
         }
 
@@ -74,6 +89,45 @@ namespace WSR_Airlines
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void officeCB_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void officeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (officeCB.SelectedValue.ToString() == "0")
+            {
+                UserDataGrid.ItemsSource = mainSet.UsersOffice.DefaultView;
+                UserDataGrid.SelectedValuePath = "Id";
+            }
+            else
+            {
+                DataTable filteredDt = new DataTable();
+
+                for (int i = 0; i < mainSet.UsersOffice.Columns.Count; i++)
+                {
+                    filteredDt.Columns.Add(mainSet.UsersOffice.Columns[i].ColumnName);
+                }
+                
+                int persistanceRowsCount = mainSet.UsersOffice.Rows.Count;
+
+                for (int i = 0; i < persistanceRowsCount; i++)
+
+                {
+                    string officeId = mainSet.UsersOffice.Rows[i]["ID_Office"].ToString();
+                    if (officeId == officeCB.SelectedValue.ToString())
+                    {
+                        filteredDt.Rows.Add(mainSet.UsersOffice.Rows[i].ItemArray);
+                    }
+                }
+
+
+                UserDataGrid.ItemsSource = filteredDt.DefaultView;
+                UserDataGrid.SelectedValuePath = "Id";
+            }
         }
 
     }

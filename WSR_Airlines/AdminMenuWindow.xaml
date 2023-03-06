@@ -31,6 +31,8 @@
             
         </Menu>
 
+        <ComboBox x:Name="officeCB" Grid.Column="0" Grid.Row="1" FontSize="32" SelectionChanged="officeCB_SelectionChanged"> </ComboBox>
+
         <DataGrid x:Name="UserDataGrid" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
             <DataGrid.CellStyle>
                 <Style TargetType="{x:Type DataGridCell}">
