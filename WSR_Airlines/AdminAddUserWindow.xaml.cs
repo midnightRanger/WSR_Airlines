@@ -71,5 +71,11 @@ namespace WSR_Airlines
                 MessageBox.Show(exc.Message, "Внимание!", MessageBoxButton.OK);
             }
         }
+
+        private void cancelBTN_Click(object sender, RoutedEventArgs e)
+        {
+            new AdminMenuWindow().Show();
+            Close();
+        }
     }
 }

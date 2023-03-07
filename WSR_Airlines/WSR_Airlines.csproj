@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AdminEditRoleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminMenuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -69,6 +73,9 @@
     </Page>
     <Compile Include="AdminAddUserWindow.xaml.cs">
       <DependentUpon>AdminAddUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditRoleWindow.xaml.cs">
+      <DependentUpon>AdminEditRoleWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminMenuWindow.xaml.cs">
       <DependentUpon>AdminMenuWindow.xaml</DependentUpon>
@@ -108,6 +115,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="MainSet.xsc">
       <DependentUpon>MainSet.xsd</DependentUpon>

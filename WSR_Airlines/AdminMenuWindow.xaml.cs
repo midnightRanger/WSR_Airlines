@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WSR_Airlines.MainSetTableAdapters;
+using WSR_Airlines.Models;
 
 namespace WSR_Airlines
 {
@@ -25,6 +26,8 @@ namespace WSR_Airlines
         MainSet mainSet = new MainSet();
         UsersTableAdapter usersTableAdapter = new UsersTableAdapter();
         OfficesTableAdapter officesTableAdapter = new OfficesTableAdapter();
+
+        User selectedUser; 
 
         UsersOfficeTableAdapter usersOfficeTableAdapter = new UsersOfficeTableAdapter();
         public AdminMenuWindow()
@@ -135,7 +138,15 @@ namespace WSR_Airlines
 
         private void changeRoleBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            if (UserDataGrid.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите пользователя для редактирования", "Alert", MessageBoxButton.OK);
+            }
+            else
+            {
+                new AdminEditRoleWindow(selectedUser).Show();
+                Close();
+            }
         }
 
         private void changeLoginBTN_Click(object sender, RoutedEventArgs e)
@@ -154,6 +165,15 @@ namespace WSR_Airlines
             UserDataGrid.ItemsSource = mainSet.UsersOffice.DefaultView;
             UserDataGrid.SelectedValuePath = "Id";
 
+        }
+
+        private void UserDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            DataRowView selectedItem = (DataRowView)UserDataGrid.SelectedItem;
+            selectedUser = new User(selectedItem.Row["Email"].ToString(), selectedItem.Row["Password"].ToString(), selectedItem.Row["Firstname"].ToString(),
+                selectedItem.Row["Secondname"].ToString(), selectedItem.Row["Birthdate"].ToString(), selectedItem.Row["Active"].ToString(), 
+                Convert.ToInt32(selectedItem.Row["Role"]), Convert.ToInt32(selectedItem.Row["Office"]));
+            
         }
     }
 }

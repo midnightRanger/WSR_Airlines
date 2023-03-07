@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace WSR_Airlines.Models
 {
-    class User
+    public class User
     {
-        public static int UserId { get; set; }
-        public static string Email { get; set; }
-        public static string Password { get; set; }
-        public static string Firstname { get; set; }
-        public static string Secondname { get; set; }
-        public static string Birthdate { get; set; }
-        public static string Active { get; set; }
-        public static int RoleId { get; set; }
-        public static int OfficeId { get; set; }
+        public int UserId { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Firstname { get; set; }
+        public string Secondname { get; set; }
+        public string Birthdate { get; set; }
+        public string Active { get; set; }
+        public int RoleId { get; set; }
+        public int OfficeId { get; set; }
 
 
         public User(string _email, string _password, string _firstname,
