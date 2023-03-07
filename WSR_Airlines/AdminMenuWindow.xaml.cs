@@ -83,7 +83,10 @@ namespace WSR_Airlines
 
         private void MenuItemAddUser_Click(object sender, RoutedEventArgs e)
         {
+            new AdminAddUserWindow().Show();
 
+            Close();
+            
         }
 
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
