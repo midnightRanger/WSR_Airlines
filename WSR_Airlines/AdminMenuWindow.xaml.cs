@@ -130,5 +130,27 @@ namespace WSR_Airlines
             }
         }
 
+        private void changeRoleBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void changeLoginBTN_Click(object sender, RoutedEventArgs e)
+        {
+           
+            int updatedActive = Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Active"]) == 1 ? 0 : 1; 
+            usersTableAdapter.UpdateQuery(Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Role"]),
+                Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Office"]), mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Email"].ToString(), mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Password"].ToString(),
+                mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Firstname"].ToString(), 
+                mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Secondname"].ToString(),
+                mainSet.Users.Rows[UserDataGrid.SelectedIndex]["Birthdate"].ToString(), 
+                updatedActive.ToString(), Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Id"]));
+
+            usersOfficeTableAdapter.Fill(mainSet.UsersOffice);
+
+            UserDataGrid.ItemsSource = mainSet.UsersOffice.DefaultView;
+            UserDataGrid.SelectedValuePath = "Id";
+
+        }
     }
 }

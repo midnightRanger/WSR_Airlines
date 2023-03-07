@@ -1715,23 +1715,25 @@ namespace WSR_Airlines {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnRole;
-            
-            private global::System.Data.DataColumn columnOffice;
-            
-            private global::System.Data.DataColumn columnEmail;
-            
-            private global::System.Data.DataColumn columnPassword;
-            
             private global::System.Data.DataColumn columnFirstname;
             
             private global::System.Data.DataColumn columnSecondname;
             
             private global::System.Data.DataColumn columnBirthdate;
             
+            private global::System.Data.DataColumn columnRole_Name;
+            
+            private global::System.Data.DataColumn columnEmail;
+            
+            private global::System.Data.DataColumn columnOffice_Name;
+            
+            private global::System.Data.DataColumn columnOffice;
+            
+            private global::System.Data.DataColumn columnPassword;
+            
             private global::System.Data.DataColumn columnActive;
             
-            private global::System.Data.DataColumn columnTitle;
+            private global::System.Data.DataColumn columnRole;
             
             private global::System.Data.DataColumn columnID_Office;
             
@@ -1778,38 +1780,6 @@ namespace WSR_Airlines {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn RoleColumn {
-                get {
-                    return this.columnRole;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn OfficeColumn {
-                get {
-                    return this.columnOffice;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EmailColumn {
-                get {
-                    return this.columnEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PasswordColumn {
-                get {
-                    return this.columnPassword;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn FirstnameColumn {
                 get {
                     return this.columnFirstname;
@@ -1834,6 +1804,46 @@ namespace WSR_Airlines {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Role_NameColumn {
+                get {
+                    return this.columnRole_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EmailColumn {
+                get {
+                    return this.columnEmail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Office_NameColumn {
+                get {
+                    return this.columnOffice_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OfficeColumn {
+                get {
+                    return this.columnOffice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PasswordColumn {
+                get {
+                    return this.columnPassword;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn ActiveColumn {
                 get {
                     return this.columnActive;
@@ -1842,9 +1852,9 @@ namespace WSR_Airlines {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TitleColumn {
+            public global::System.Data.DataColumn RoleColumn {
                 get {
-                    return this.columnTitle;
+                    return this.columnRole;
                 }
             }
             
@@ -1893,31 +1903,24 @@ namespace WSR_Airlines {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersOfficeRow AddUsersOfficeRow(int Id, int Role, int Office, string Email, string Password, string Firstname, string Secondname, string Birthdate, string Active, string Title, int ID_Office) {
+            public UsersOfficeRow AddUsersOfficeRow(int Id, string Firstname, string Secondname, string Birthdate, string Role_Name, string Email, string Office_Name, int Office, string Password, string Active, int Role, int ID_Office) {
                 UsersOfficeRow rowUsersOfficeRow = ((UsersOfficeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
-                        Role,
-                        Office,
-                        Email,
-                        Password,
                         Firstname,
                         Secondname,
                         Birthdate,
+                        Role_Name,
+                        Email,
+                        Office_Name,
+                        Office,
+                        Password,
                         Active,
-                        Title,
+                        Role,
                         ID_Office};
                 rowUsersOfficeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsersOfficeRow);
                 return rowUsersOfficeRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersOfficeRow FindByIdID_Office(int Id, int ID_Office) {
-                return ((UsersOfficeRow)(this.Rows.Find(new object[] {
-                            Id,
-                            ID_Office})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1938,15 +1941,16 @@ namespace WSR_Airlines {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnRole = base.Columns["Role"];
-                this.columnOffice = base.Columns["Office"];
-                this.columnEmail = base.Columns["Email"];
-                this.columnPassword = base.Columns["Password"];
                 this.columnFirstname = base.Columns["Firstname"];
                 this.columnSecondname = base.Columns["Secondname"];
                 this.columnBirthdate = base.Columns["Birthdate"];
+                this.columnRole_Name = base.Columns["Role_Name"];
+                this.columnEmail = base.Columns["Email"];
+                this.columnOffice_Name = base.Columns["Office_Name"];
+                this.columnOffice = base.Columns["Office"];
+                this.columnPassword = base.Columns["Password"];
                 this.columnActive = base.Columns["Active"];
-                this.columnTitle = base.Columns["Title"];
+                this.columnRole = base.Columns["Role"];
                 this.columnID_Office = base.Columns["ID_Office"];
             }
             
@@ -1955,45 +1959,46 @@ namespace WSR_Airlines {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnRole = new global::System.Data.DataColumn("Role", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRole);
-                this.columnOffice = new global::System.Data.DataColumn("Office", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOffice);
-                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmail);
-                this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPassword);
                 this.columnFirstname = new global::System.Data.DataColumn("Firstname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFirstname);
                 this.columnSecondname = new global::System.Data.DataColumn("Secondname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSecondname);
                 this.columnBirthdate = new global::System.Data.DataColumn("Birthdate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBirthdate);
+                this.columnRole_Name = new global::System.Data.DataColumn("Role_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRole_Name);
+                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmail);
+                this.columnOffice_Name = new global::System.Data.DataColumn("Office_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOffice_Name);
+                this.columnOffice = new global::System.Data.DataColumn("Office", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOffice);
+                this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPassword);
                 this.columnActive = new global::System.Data.DataColumn("Active", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnActive);
-                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTitle);
+                this.columnRole = new global::System.Data.DataColumn("Role", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRole);
                 this.columnID_Office = new global::System.Data.DataColumn("ID_Office", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Office);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId,
-                                this.columnID_Office}, true));
                 this.columnId.AllowDBNull = false;
-                this.columnRole.AllowDBNull = false;
-                this.columnEmail.AllowDBNull = false;
-                this.columnEmail.MaxLength = 50;
-                this.columnPassword.AllowDBNull = false;
-                this.columnPassword.MaxLength = 50;
                 this.columnFirstname.AllowDBNull = false;
                 this.columnFirstname.MaxLength = 50;
                 this.columnSecondname.AllowDBNull = false;
                 this.columnSecondname.MaxLength = 50;
                 this.columnBirthdate.AllowDBNull = false;
                 this.columnBirthdate.MaxLength = 50;
+                this.columnRole_Name.AllowDBNull = false;
+                this.columnRole_Name.MaxLength = 50;
+                this.columnEmail.AllowDBNull = false;
+                this.columnEmail.MaxLength = 50;
+                this.columnOffice_Name.AllowDBNull = false;
+                this.columnOffice_Name.MaxLength = 50;
+                this.columnPassword.AllowDBNull = false;
+                this.columnPassword.MaxLength = 50;
                 this.columnActive.AllowDBNull = false;
                 this.columnActive.MaxLength = 1;
-                this.columnTitle.AllowDBNull = false;
-                this.columnTitle.MaxLength = 50;
+                this.columnRole.AllowDBNull = false;
                 this.columnID_Office.AllowDBNull = false;
             }
             
@@ -2489,55 +2494,6 @@ namespace WSR_Airlines {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Role {
-                get {
-                    return ((int)(this[this.tableUsersOffice.RoleColumn]));
-                }
-                set {
-                    this[this.tableUsersOffice.RoleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Office {
-                get {
-                    try {
-                        return ((int)(this[this.tableUsersOffice.OfficeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Office\' в таблице \'UsersOffice\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableUsersOffice.OfficeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Email {
-                get {
-                    return ((string)(this[this.tableUsersOffice.EmailColumn]));
-                }
-                set {
-                    this[this.tableUsersOffice.EmailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Password {
-                get {
-                    return ((string)(this[this.tableUsersOffice.PasswordColumn]));
-                }
-                set {
-                    this[this.tableUsersOffice.PasswordColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Firstname {
                 get {
                     return ((string)(this[this.tableUsersOffice.FirstnameColumn]));
@@ -2571,6 +2527,66 @@ namespace WSR_Airlines {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Role_Name {
+                get {
+                    return ((string)(this[this.tableUsersOffice.Role_NameColumn]));
+                }
+                set {
+                    this[this.tableUsersOffice.Role_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Email {
+                get {
+                    return ((string)(this[this.tableUsersOffice.EmailColumn]));
+                }
+                set {
+                    this[this.tableUsersOffice.EmailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Office_Name {
+                get {
+                    return ((string)(this[this.tableUsersOffice.Office_NameColumn]));
+                }
+                set {
+                    this[this.tableUsersOffice.Office_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Office {
+                get {
+                    try {
+                        return ((int)(this[this.tableUsersOffice.OfficeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Office\' в таблице \'UsersOffice\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsersOffice.OfficeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Password {
+                get {
+                    return ((string)(this[this.tableUsersOffice.PasswordColumn]));
+                }
+                set {
+                    this[this.tableUsersOffice.PasswordColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Active {
                 get {
                     return ((string)(this[this.tableUsersOffice.ActiveColumn]));
@@ -2582,12 +2598,12 @@ namespace WSR_Airlines {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Title {
+            public int Role {
                 get {
-                    return ((string)(this[this.tableUsersOffice.TitleColumn]));
+                    return ((int)(this[this.tableUsersOffice.RoleColumn]));
                 }
                 set {
-                    this[this.tableUsersOffice.TitleColumn] = value;
+                    this[this.tableUsersOffice.RoleColumn] = value;
                 }
             }
             
@@ -4006,12 +4022,26 @@ SELECT Id, Role, Office, Email, Password, Firstname, Secondname, Birthdate, Acti
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Role, Office, Email, Password, Firstname, Secondname, Birthdate, Activ" +
                 "e FROM dbo.Users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"UPDATE [dbo].[Users] SET [Role] = @Role, [Office] = @Office, [Email] = @Email, [Password] = @Password, [Firstname] = @Firstname, [Secondname] = @Secondname, [Birthdate] = @Birthdate, [Active] = @Active WHERE ([Id] = @Id);
+SELECT Id, Role, Office, Email, Password, Firstname, Secondname, Birthdate, Active FROM Users WHERE (Id = @Id)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Office", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Office", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Firstname", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Firstname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Secondname", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Secondname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birthdate", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Active", global::System.Data.SqlDbType.NChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4351,6 +4381,73 @@ SELECT Id, Role, Office, Email, Password, Firstname, Secondname, Birthdate, Acti
                     string Original_Active) {
             return this.Update(Role, Office, Email, Password, Firstname, Secondname, Birthdate, Active, Original_Id, Original_Role, Original_Office, Original_Email, Original_Password, Original_Firstname, Original_Secondname, Original_Birthdate, Original_Active, Original_Id);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(int Role, global::System.Nullable<int> Office, string Email, string Password, string Firstname, string Secondname, string Birthdate, string Active, int Id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(Role));
+            if ((Office.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(Office.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Email));
+            }
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Password));
+            }
+            if ((Firstname == null)) {
+                throw new global::System.ArgumentNullException("Firstname");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(Firstname));
+            }
+            if ((Secondname == null)) {
+                throw new global::System.ArgumentNullException("Secondname");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Secondname));
+            }
+            if ((Birthdate == null)) {
+                throw new global::System.ArgumentNullException("Birthdate");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(Birthdate));
+            }
+            if ((Active == null)) {
+                throw new global::System.ArgumentNullException("Active");
+            }
+            else {
+                command.Parameters[7].Value = ((string)(Active));
+            }
+            command.Parameters[8].Value = ((int)(Id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
     }
     
     /// <summary>
@@ -4475,15 +4572,16 @@ SELECT Id, Role, Office, Email, Password, Firstname, Secondname, Birthdate, Acti
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "UsersOffice";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("Role", "Role");
-            tableMapping.ColumnMappings.Add("Office", "Office");
-            tableMapping.ColumnMappings.Add("Email", "Email");
-            tableMapping.ColumnMappings.Add("Password", "Password");
             tableMapping.ColumnMappings.Add("Firstname", "Firstname");
             tableMapping.ColumnMappings.Add("Secondname", "Secondname");
             tableMapping.ColumnMappings.Add("Birthdate", "Birthdate");
+            tableMapping.ColumnMappings.Add("Role_Name", "Role_Name");
+            tableMapping.ColumnMappings.Add("Email", "Email");
+            tableMapping.ColumnMappings.Add("Office_Name", "Office_Name");
+            tableMapping.ColumnMappings.Add("Office", "Office");
+            tableMapping.ColumnMappings.Add("Password", "Password");
             tableMapping.ColumnMappings.Add("Active", "Active");
-            tableMapping.ColumnMappings.Add("Title", "Title");
+            tableMapping.ColumnMappings.Add("Role", "Role");
             tableMapping.ColumnMappings.Add("ID_Office", "ID_Office");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -4501,8 +4599,8 @@ SELECT Id, Role, Office, Email, Password, Firstname, Secondname, Birthdate, Acti
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Role, Office, Email, Password, Firstname, Secondname, Birthdate, Activ" +
-                "e, Title, ID_Office FROM dbo.UsersOffice";
+            this._commandCollection[0].CommandText = "SELECT Id, Firstname, Secondname, Birthdate, Role_Name, Email, Office_Name, Offic" +
+                "e, Password, Active, Role, ID_Office FROM dbo.UsersOffice";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
