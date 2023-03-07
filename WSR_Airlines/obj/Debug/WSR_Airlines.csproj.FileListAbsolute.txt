@@ -19,3 +19,5 @@ C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\AdminAddUserWin
 C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\AdminAddUserWindow.baml
 C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\AdminEditRoleWindow.g.cs
 C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\AdminEditRoleWindow.baml
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\UserMenuWindow.g.cs
+C:\Users\Лев\source\repos\WSR_Airlines\WSR_Airlines\obj\Debug\UserMenuWindow.baml

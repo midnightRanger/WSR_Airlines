@@ -18,6 +18,8 @@ namespace WSR_Airlines.Models
         public int RoleId { get; set; }
         public int OfficeId { get; set; }
 
+        public User() { }
+
 
         public User(int _userId, string _email, string _password, string _firstname,
             string _secondname, string _birthdate, string _active, int _roleId, int _officeId)

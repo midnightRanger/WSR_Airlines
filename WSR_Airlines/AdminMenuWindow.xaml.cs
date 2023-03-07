@@ -28,7 +28,6 @@ namespace WSR_Airlines
         OfficesTableAdapter officesTableAdapter = new OfficesTableAdapter();
 
         User selectedUser;
-        bool changedLogin = false; 
 
         UsersOfficeTableAdapter usersOfficeTableAdapter = new UsersOfficeTableAdapter();
         public AdminMenuWindow()
