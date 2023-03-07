@@ -170,8 +170,8 @@ namespace WSR_Airlines
         private void UserDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             DataRowView selectedItem = (DataRowView)UserDataGrid.SelectedItem;
-            selectedUser = new User(selectedItem.Row["Email"].ToString(), selectedItem.Row["Password"].ToString(), selectedItem.Row["Firstname"].ToString(),
-                selectedItem.Row["Secondname"].ToString(), selectedItem.Row["Birthdate"].ToString(), selectedItem.Row["Active"].ToString(), 
+            selectedUser = new User(Convert.ToInt32(selectedItem.Row["Id"]), selectedItem.Row["Email"].ToString(), selectedItem.Row["Password"].ToString(), selectedItem.Row["Firstname"].ToString(),
+                selectedItem.Row["Secondname"].ToString(), mainSet.Users.Rows[UserDataGrid.SelectedIndex]["Birthdate"].ToString(), selectedItem.Row["Active"].ToString(), 
                 Convert.ToInt32(selectedItem.Row["Role"]), Convert.ToInt32(selectedItem.Row["Office"]));
             
         }

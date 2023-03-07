@@ -77,7 +77,7 @@ namespace WSR_Airlines
                 if(usernameTB.Text == dataSet.Users.Rows[i]["Email"].ToString() &&
                     passwordTB.Text == dataSet.Users.Rows[i]["Password"].ToString())
                 {
-                    User user = new User(_email: usernameTB.Text, _password: passwordTB.Text,
+                    User user = new User(_userId: Convert.ToInt32(dataSet.Users.Rows[i]["Id"]), _email: usernameTB.Text, _password: passwordTB.Text,
                         _firstname: dataSet.Users.Rows[i]["Firstname"].ToString(), _secondname: dataSet.Users.Rows[i]["Secondname"].ToString(),
                         _birthdate: dataSet.Users.Rows[i]["Birthdate"].ToString(), _active: dataSet.Users.Rows[i]["Active"].ToString(),
                         _roleId: Convert.ToInt32(dataSet.Users.Rows[i]["Role"]), _officeId: Convert.ToInt32(dataSet.Users.Rows[i]["Office"]));
