@@ -44,12 +44,12 @@
         <ComboBox x:Name="officeCB"  FontSize="15"  BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="7"/>
 
         <Label Content="Birthdate:" FontSize="15" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="9"/>
-        <DatePicker x:Name="birhtdateDT"  FontSize="15"  BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="9"/>
+        <DatePicker x:Name="birhtdateDT" FontSize="15"  BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="9"/>
 
         <Label Content="Password:" FontSize="15" VerticalContentAlignment="Center"  Grid.Column="1" Grid.Row="11"/>
         <TextBox x:Name="passwordTB"  FontSize="15"  BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="11"/>
 
-        <Button x:Name="saveBTN" Content="Save"  FontSize="14"  Grid.Row="12" Grid.Column="1" BorderThickness="2"  VerticalAlignment="Bottom" />
+        <Button x:Name="saveBTN" Content="Save"  FontSize="14"  Grid.Row="12" Grid.Column="1" BorderThickness="2"  VerticalAlignment="Bottom" Click="saveBTN_Click" />
         <Button x:Name="cancelBTN" Content="Cancel"  FontSize="14"  Grid.Row="12" Grid.Column="2" BorderThickness="2" Margin="20,0,0,0" VerticalAlignment="Bottom" />
        
     </Grid>
