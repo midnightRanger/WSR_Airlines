@@ -27,7 +27,8 @@ namespace WSR_Airlines
         UsersTableAdapter usersTableAdapter = new UsersTableAdapter();
         OfficesTableAdapter officesTableAdapter = new OfficesTableAdapter();
 
-        User selectedUser; 
+        User selectedUser;
+        bool changedLogin = false; 
 
         UsersOfficeTableAdapter usersOfficeTableAdapter = new UsersOfficeTableAdapter();
         public AdminMenuWindow()
@@ -151,28 +152,40 @@ namespace WSR_Airlines
 
         private void changeLoginBTN_Click(object sender, RoutedEventArgs e)
         {
-           
-            int updatedActive = Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Active"]) == 1 ? 0 : 1; 
-            usersTableAdapter.UpdateQuery(Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Role"]),
-                Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Office"]), mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Email"].ToString(), mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Password"].ToString(),
-                mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Firstname"].ToString(), 
-                mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Secondname"].ToString(),
-                mainSet.Users.Rows[UserDataGrid.SelectedIndex]["Birthdate"].ToString(), 
-                updatedActive.ToString(), Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Id"]));
+            if (UserDataGrid.SelectedIndex == -1 || UserDataGrid.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите пользователя!", "Alert", MessageBoxButton.OK);
+            }
+            else
+            {
+                int updatedActive = Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Active"]) == 1 ? 0 : 1;
+                usersTableAdapter.UpdateQuery(Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Role"]),
+                    Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Office"]), mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Email"].ToString(), mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Password"].ToString(),
+                    mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Firstname"].ToString(),
+                    mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Secondname"].ToString(),
+                    mainSet.Users.Rows[UserDataGrid.SelectedIndex]["Birthdate"].ToString(),
+                    updatedActive.ToString(), Convert.ToInt32(mainSet.UsersOffice.Rows[UserDataGrid.SelectedIndex]["Id"]));
 
-            usersOfficeTableAdapter.Fill(mainSet.UsersOffice);
+                usersOfficeTableAdapter.Fill(mainSet.UsersOffice);
+                UserDataGrid.ItemsSource = mainSet.UsersOffice.DefaultView;
+                UserDataGrid.SelectedValuePath = "Id";
 
-            UserDataGrid.ItemsSource = mainSet.UsersOffice.DefaultView;
-            UserDataGrid.SelectedValuePath = "Id";
+                //UserDataGrid.SelectedItem = null;
+            }
 
         }
 
         private void UserDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
+            
             DataRowView selectedItem = (DataRowView)UserDataGrid.SelectedItem;
-            selectedUser = new User(Convert.ToInt32(selectedItem.Row["Id"]), selectedItem.Row["Email"].ToString(), selectedItem.Row["Password"].ToString(), selectedItem.Row["Firstname"].ToString(),
-                selectedItem.Row["Secondname"].ToString(), mainSet.Users.Rows[UserDataGrid.SelectedIndex]["Birthdate"].ToString(), selectedItem.Row["Active"].ToString(), 
-                Convert.ToInt32(selectedItem.Row["Role"]), Convert.ToInt32(selectedItem.Row["Office"]));
+            if (selectedItem != null)
+            {
+                selectedUser = new User(Convert.ToInt32(selectedItem.Row["Id"]), selectedItem.Row["Email"].ToString(), selectedItem.Row["Password"].ToString(), selectedItem.Row["Firstname"].ToString(),
+                    selectedItem.Row["Secondname"].ToString(), mainSet.Users.Rows[UserDataGrid.SelectedIndex]["Birthdate"].ToString(), selectedItem.Row["Active"].ToString(),
+                    Convert.ToInt32(selectedItem.Row["Role"]), Convert.ToInt32(selectedItem.Row["Office"]));
+            }
+            
             
         }
     }
